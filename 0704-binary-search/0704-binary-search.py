@@ -1,14 +1,6 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        start = 0
-        end = len(nums)-1
-
-        while start <= end:
-            mid = (end + start) // 2
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] > target:
-                end = mid - 1
-            else: # 0 < 2
-                start = mid + 1
-        return -1
+        try:
+            return nums.index(target)
+        except ValueError: # 값이 없으면 에러 나서.. 예외 처리 해줌
+            return -1
