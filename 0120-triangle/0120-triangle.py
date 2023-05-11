@@ -1,7 +1,7 @@
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
 
-        memo = [[-1] * len(triangle) for _ in range(len(triangle))]
+        memo = [[-1] * len(n) for n in triangle]
         max_level = len(triangle)-1
 
         def min_path(index: int, level: int) -> int:
